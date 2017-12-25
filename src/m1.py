@@ -214,7 +214,7 @@ class CircleChanger(object):
           -- An integer that indicates how much this CircleChanger's
                circle is to swell or shrink by, that is, how much
                this CircleChanger's circle's radius is to change by.
-        What goes out: Nothing (i.e., None).
+1        What goes out: Nothing (i.e., None).
 
         Side effects:
         The following happens IN THE ORDER LISTED.
@@ -338,6 +338,11 @@ class CircleChanger(object):
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
+        for k in range(times_to_swell_or_shrink):
+            self.swell_or_shrink_once(amount_to_swell_or_shrink)
+            self.draw()
+            self.swell_or_shrink_once(-(amount_to_swell_or_shrink))
+            self.draw()
 
 
     def swallow(self, other_circle_changer):
